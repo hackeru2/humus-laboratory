@@ -43,13 +43,16 @@ export default defineVuetifyConfiguration({
 
   defaults: {
     global: {
-      ripple: false,
+      ripple: true,
+    },
+    VCarousel: {
+      color: 'primary',
     },
     VBtn: {
-      color: 'primary',
+      // color: 'primary',
       variant: 'flat',
-      style:
-        'letter-spacing:.0178571429em; text-transform:none !important; border-radius:9999px !important',
+      style: '',
+      // 'letter-spacing:.0178571429em; text-transform:none !important; border-radius:9999px !important',
       class: '',
     },
     VBtnSquare: {
@@ -77,23 +80,23 @@ export default defineVuetifyConfiguration({
 
   display: {
     mobileBreakpoint: 'xs',
-    // thresholds: {
-    //   xs: 0,
-    //   sm: 600,
-    //   md: 960,
-    //   lg: 1280,
-    //   xl: 1920,
-    //   xxl: 2560,
-    // },
-    // Using Tailwind ones here
     thresholds: {
       xs: 0,
-      sm: 640,
-      md: 768,
-      lg: 1024,
-      xl: 1280,
-      xxl: 1536,
+      sm: 600,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+      xxl: 2560,
     },
+    // Using Tailwind ones here
+    // thresholds: {
+    //   xs: 0,
+    //   sm: 640,
+    //   md: 768,
+    //   lg: 1024,
+    //   xl: 1280,
+    //   xxl: 1536,
+    // },
   },
 
   date: {

@@ -22,7 +22,7 @@ export default defineNuxtConfig({
 
   experimental: {
     // Required when customizing Vuetify sass variables via configFile with SSR enabled - https://vuetify-nuxt-module.netlify.app/guide/server-side-rendering.html#vuetify-sass-variables
-    //   inlineSSRStyles: false,
+    inlineSSRStyles: false,
 
     componentIslands: true,
   },
@@ -50,6 +50,7 @@ export default defineNuxtConfig({
     '@nuxtjs/fontaine',
     '@nuxtjs/critters',
     'nuxt-icon',
+    'nuxt-viewport',
   ],
   // https://dev.to/jacobandrewsky/improving-performance-of-nuxt-with-fontaine-5dim
   fontMetrics: {
@@ -67,9 +68,10 @@ export default defineNuxtConfig({
 
   // Vuetify's global styles
   css: [
-    '~/assets/css/main.css', // Used for global styles. This file is generally configured as cssPath with Pinegrow Vuetify Plugin
-    '~/assets/vuetify/main.scss', // If customizing Vuetify sass variables
-    'lite-youtube-embed/src/lite-yt-embed.css',
+    // '~/assets/css/main.css', // Used for global styles. This file is generally configured as cssPath with Pinegrow Vuetify Plugin
+    // '~/assets/vuetify/main.scss', // If customizing Vuetify sass variables
+    // 'lite-youtube-embed/src/lite-yt-embed.css',
+    'vuetify/_styles.scss',
   ],
 
   postcss: {
@@ -85,9 +87,6 @@ export default defineNuxtConfig({
     moduleOptions: {
       /* If customizing sass variables of vuetify components */
       /* If enabling this, set experimental.inlineSSRStyles to false */
-      // styles: {
-      //   configFile: 'assets/vuetify/settings.scss',
-      // },
       includeTransformAssetsUrls: {
         NuxtImg: ['src'],
         OgImage: ['image'],
@@ -96,7 +95,7 @@ export default defineNuxtConfig({
       },
 
       ssrClientHints: {
-        reloadOnFirstRequest: false,
+        reloadOnFirstRequest: true,
         prefersColorScheme: true,
         prefersColorSchemeOptions: {
           useBrowserThemeOnly: false,
@@ -289,8 +288,8 @@ export default defineNuxtConfig({
       },
       vuetify: {
         configPath: 'vuetify.config.ts',
-        utilities: false,
-        themePath: false, // Set to false so that tailwind Design Panel is used instead of Vuetify
+        utilities: true,
+        // themePath: true, // Set to false so that tailwind Design Panel is used instead of Vuetify
         // restartOnConfigUpdate: true,
         restartOnThemeUpdate: true,
       },

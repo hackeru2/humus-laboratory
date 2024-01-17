@@ -56,6 +56,8 @@
     "npm-run-all": "^4.1.5",
     "nuxt": "^3.7.3",
     "nuxt-icon": "^0.6.1",
+    "nuxt-mdi": "^1.1.1",
+    "nuxt-viewport": "^2.1.0",
     "postcss": "^8.4.22",
     "prettier": "^2.8.4",
     "rehype-external-links": "^3.0.0",
