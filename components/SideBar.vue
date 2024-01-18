@@ -8,7 +8,7 @@
   >
     <div>
       <v-img
-        src="logo.png"
+        src="/logo.png"
         alt="food"
         class="scale-11 mx-auto"
         :width="imgSize"

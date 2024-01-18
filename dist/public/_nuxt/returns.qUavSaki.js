@@ -1,0 +1,1 @@
+import{d as e,o as t,f as s,i as n}from"./entry.2B-j7TqJ.js";const o={style:{"min-height":"100px",display:"flex","align-items":"center","justify-content":"center","font-weight":"bold"}},c=n("span",{style:{color:"#0198cd"}},"returns.vue (Nuxt 3.6)",-1),r=[c],l=e({__name:"returns",setup(a){return(i,_)=>(t(),s("div",o,r))}});export{l as default};

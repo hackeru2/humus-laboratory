@@ -1,0 +1,1 @@
+import{d as e,o as t,f as s,i as o}from"./entry.2B-j7TqJ.js";const n={style:{"min-height":"100px",display:"flex","align-items":"center","justify-content":"center","font-weight":"bold"}},a=o("span",{style:{color:"#0198cd"}},"help-faqs.vue (Nuxt 3.6)",-1),c=[a],p=e({__name:"help-faqs",setup(i){return(_,l)=>(t(),s("div",n,c))}});export{p as default};

@@ -17,7 +17,8 @@ export default defineNuxtConfig({
   extends: [
     './my-nuxt-vuetify-tailwindcss-layer', // NavBar and Footer components
   ],
-  // ssr: false,
+  ssr: true,
+
   devtools: { enabled: false }, // Disable when using Vue devtools
 
   experimental: {

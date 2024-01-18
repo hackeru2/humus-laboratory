@@ -1,0 +1,1 @@
+import{d as e,o as t,f as o,i as s}from"./entry.2B-j7TqJ.js";const n={style:{"min-height":"100px",display:"flex","align-items":"center","justify-content":"center","font-weight":"bold"}},c=s("span",{style:{color:"#0198cd"}},"track-order.vue (Nuxt 3.6)",-1),r=[c],l=e({__name:"track-order",setup(a){return(i,_)=>(t(),o("div",n,r))}});export{l as default};

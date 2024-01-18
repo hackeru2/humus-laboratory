@@ -68,7 +68,8 @@
       </v-card>
       <v-row>
         <v-col cols="12" sm="3" class=""
-          ><v-avatar> <v-img src="20.jpg" alt="John"></v-img> </v-avatar
+          ><v-avatar>
+            <v-img src="~/public/20.jpg" alt="John"></v-img> </v-avatar
           ><span class="text-caption text-white ml-1">Jamsed Jhon</span></v-col
         >
         <v-col cols="12" sm="2" class="text-center mt-2"
@@ -87,7 +88,8 @@
       </v-row>
       <v-row class="mt-n5">
         <v-col cols="12" sm="3" class=""
-          ><v-avatar> <v-img src="30.jpg" alt="John"></v-img> </v-avatar
+          ><v-avatar>
+            <v-img src="~/public/30.jpg" alt="John"></v-img> </v-avatar
           ><span class="text-caption text-white ml-1">Peter Poker</span></v-col
         >
         <v-col cols="12" sm="2" class="text-center mt-2"
