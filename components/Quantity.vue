@@ -2,10 +2,8 @@
   <v-card-text v-if="dish" class="mt-n2">
     <v-btn
       icon="i-material-symbols-add-circle-outline"
-      :disabled="
-        cart.items[dish._id ?? dish.dish_id] &&
-        cart.items[dish._id ?? dish.dish_id].quantity >= 99
-      "
+      variant="text"
+      :disabled="disabledPlus"
       @click="cart.onClickAdd(dish)"
     />
     {{
@@ -30,14 +28,20 @@
     dish: Object,
   })
   const cart = useCartStore()
-  const disabledMinus = computed({
-    get: () =>
+  const disabledMinus = computed(
+    () =>
       !cart.items[dish._id ?? dish.dish_id] ||
       !cart.items[dish._id ?? dish.dish_id].quantity,
-    set: (newValue) => {
-      console.log(newValue)
-    },
-  })
+  )
+  const disabledPlus = computed(
+    () =>
+      cart.items[dish._id ?? dish.dish_id] &&
+      cart.items[dish._id ?? dish.dish_id].quantity >= 99,
+  )
 </script>
 
-<style></style>
+<style>
+  .v-btn-icon {
+    width: auto;
+  }
+</style>

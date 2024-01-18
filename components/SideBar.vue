@@ -6,11 +6,11 @@
     permanent
     color="#2B2B2B"
   >
-    <div color="" :class="{ 'pa-4': !rail }">
+    <div>
       <v-img
         src="logo.png"
         alt="food"
-        class="scale-11 ml-9"
+        class="scale-11 mx-auto"
         :width="imgSize"
         :height="imgSize"
       ></v-img>
@@ -29,9 +29,7 @@
         <template #prepend>
           <v-icon :icon="item.icon"></v-icon>
         </template>
-        <v-list-item-title :title="item.text">{{
-          item.text
-        }}</v-list-item-title>
+        <v-list-item-title>{{ item.text }}</v-list-item-title>
       </v-list-item>
     </v-list>
     <div
