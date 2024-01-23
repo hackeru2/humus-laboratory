@@ -4,7 +4,7 @@
       <v-card-item title="DELIVERY ADDRESS">
         <template #subtitle>
           <v-icon
-            icon="i-material-symbols-map-marker"
+            icon="mdi-map-marker-circle"
             size="18"
             class="me-1 pb-1"
           ></v-icon>
@@ -13,18 +13,12 @@
         </template>
       </v-card-item>
       <v-card-text class="mt-n3">
-        <v-icon
-          size="16"
-          icon="i-material-symbols-clock-outline"
-          class="mr-2"
-        ></v-icon
-        >20 min</v-card-text
+        <v-icon size="16" icon="mdi-clock-outline" class="mr-2"></v-icon>20
+        min</v-card-text
       >
     </v-card>
     <v-toolbar color="transparent" class="pr-1 mt-n2">
-      <v-btn icon class="hidden-xs-only">
-        <v-icon>i-material-symbols-cart</v-icon>
-      </v-btn>
+      <v-btn icon="mdi-cart" class="hidden-xs-only"> </v-btn>
 
       <v-toolbar-title>Cart</v-toolbar-title>
 
@@ -37,8 +31,8 @@
       <v-chip variant="text" color="red"> | </v-chip>
       <v-chip variant="text"> Takeaway </v-chip>
     </v-card>
-    <template v-for="(item, index) in cart.items" :key="index">
-      {{ item }}
+    <template v-for="(item, i) in cart.items" :key="i">
+      <!-- {{ item }} -->
       <v-card
         class="ma-2 mt-n2"
         :title="item.name"
@@ -54,7 +48,7 @@
         <template #append>
           <v-btn
             density="compact"
-            icon="i-material-symbols-circle-edit-outline"
+            icon="mdi-circle-edit-outline"
             x-small
           ></v-btn>
         </template>

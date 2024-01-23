@@ -73,5 +73,6 @@
   },
   "overrides": {
     "nuxi": "3.8.4"
-  }
+  },
+  "web-types": "web-types.json"
 }

@@ -7,13 +7,12 @@
     color="#2B2B2B"
   >
     <div>
-      <v-img
-        src="/logo.png"
-        alt="food"
+      <my-img
         class="scale-11 mx-auto"
+        src="/logo.png"
         :width="imgSize"
         :height="imgSize"
-      ></v-img>
+      />
     </div>
     <v-card class="rounded-e-xl me" width="60" height="400" color="#545454">
     </v-card>
@@ -27,8 +26,9 @@
         variant="plain"
       >
         <template #prepend>
-          <v-icon :icon="item.icon"></v-icon>
+          <v-icon class="test" :icon="item.icon"></v-icon>
         </template>
+
         <v-list-item-title>{{ item.text }}</v-list-item-title>
       </v-list-item>
     </v-list>
@@ -67,27 +67,18 @@
 </template>
 <script setup>
   import { ref } from 'vue'
-  const links = [
-    { text: 'Dashboard', icon: 'i-material-symbols-dashboard' },
-    { text: 'Orders', icon: 'i-material-symbols-call' },
-    { text: 'Restaurants', icon: 'i-material-symbols-pin-drop' },
-    { text: 'Finance', icon: 'i-material-symbols-finance' },
-    { text: 'Logout', icon: 'i-material-symbols-logout' },
-  ]
+  import { links } from '@/assets/data/links'
+  import MyImg from './MyImg.vue'
 
-  const drawer = ref(null)
+  import { onMounted } from 'vue'
+  onMounted(() => {
+    console.log(document.querySelector('.test'))
+  })
+  const drawer = ref(true)
+  const imgSize = 150
+  const rail = ref(false)
 </script>
 
-<script>
-  export default {
-    data: () => ({
-      cards: ['Today', 'Yesterday'],
-      rail: false,
-      drawer: false,
-      imgSize: 150,
-    }),
-  }
-</script>
 <style scoped>
   .v-list-item.v-list-item--active.v-list-item--link.border.v-theme--light.text-red.v-list-item--density-default.v-list-item--one-line.v-list-item--variant-text {
     color: white !important;

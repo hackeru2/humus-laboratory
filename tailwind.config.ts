@@ -7,6 +7,14 @@ import {
 import { getFontsWithFallback } from './utils/font'
 
 export default {
+  theme: {
+    extend: {
+      screens: {
+        xs: '475px',
+        xxs: '360px',
+      },
+    },
+  },
   important: true,
   darkMode: 'class',
   plugins: [

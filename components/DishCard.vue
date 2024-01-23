@@ -2,14 +2,16 @@
   <v-card
     v-if="dish"
     color="transparent"
-    class="mx-sm-6"
-    :class="{
-      'w-100': $nuxt.$vuetify.display.sm,
-    }"
+    class="mx-sm-1 my-10 sm:w-1/3 xs-w-9-12 xxs-w-9-12"
+    elevation="0"
+    max-width="90vw"
+    min-width="250px"
   >
     <v-img height="70" :src="dish.image" class="imag"></v-img>
-    <v-card class="mt-n10" color="#303030">
+
+    <v-card c color="#303030" elevation="0">
       <v-card-item class="text-center">
+        <v-btn class="btn-blue">asd</v-btn>
         <v-card-title class="mt-10">{{ dish.name }}</v-card-title>
 
         <v-card-subtitle>
@@ -24,11 +26,7 @@
 
       <v-card-text>
         <v-row align="center" class="mx-0">
-          <v-icon
-            color="yellow"
-            icon="i-material-symbols-star"
-            size="small"
-          ></v-icon>
+          <v-icon color="yellow" icon="mdi-star" size="small"></v-icon>
           <div class="text-grey ms-4">
             <h6>{{ dish.star }}</h6>
           </div>

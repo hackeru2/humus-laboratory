@@ -103,9 +103,9 @@ export default defineVuetifyConfiguration({
     // adapter: 'vuetify', // 'vuetify' | 'date-fns' | 'moment' | 'luxon' | 'dayjs' | 'js-joda' | 'date-fns-jalali' | 'jalaali' | 'hijri' | 'custom'
   },
 
-  icons: {
-    defaultSet: 'unocss-mdi',
-  },
+  // icons: {
+  //   // defaultSet: 'unocss-mdi',
+  // },
 
   /* locale: {
     messages: {

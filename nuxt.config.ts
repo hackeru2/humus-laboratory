@@ -17,7 +17,7 @@ export default defineNuxtConfig({
   extends: [
     './my-nuxt-vuetify-tailwindcss-layer', // NavBar and Footer components
   ],
-  ssr: true,
+  //ssr: false,
 
   devtools: { enabled: false }, // Disable when using Vue devtools
 
@@ -72,7 +72,7 @@ export default defineNuxtConfig({
     // '~/assets/css/main.css', // Used for global styles. This file is generally configured as cssPath with Pinegrow Vuetify Plugin
     // '~/assets/vuetify/main.scss', // If customizing Vuetify sass variables
     // 'lite-youtube-embed/src/lite-yt-embed.css',
-    'vuetify/_styles.scss',
+    // 'vuetify/_styles.scss',
   ],
 
   postcss: {

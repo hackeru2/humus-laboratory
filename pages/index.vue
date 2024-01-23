@@ -1,6 +1,29 @@
 <template>
   <v-row>
-    <v-col cols="12" sm="12" md="6">
+    <v-col cols="12" class="mt-0 pt-0">
+      <v-parallax
+        src="/paralax.png"
+        class="custom-parallax"
+        style="max-height: 100vh"
+      >
+        <div
+          class="sticky d-flex flex-column fill-height justify-center align-center text-white"
+        >
+          <h1 class="text-h4 font-weight-thin mb-4">Humus Laboratory</h1>
+          <h4 class="subheading">Order your Dish today!</h4>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores
+            repellendus
+          </p>
+          <p>neque soluta autem natus enim quibusdam ut nemo veritatis</p>
+          <p>
+            , quidem asperiores at aperiam ipsa quas eaque. Obcaecati rem
+            dolorem saepe!
+          </p>
+        </div>
+      </v-parallax>
+    </v-col>
+    <v-col cols="12" sm="12" md="8">
       <v-text-field
         density="compact"
         placeholder="Search restaurant, Food, Cuisine or a Dish"
@@ -15,12 +38,8 @@
         <v-toolbar-title class="text-white">Popular Dishes</v-toolbar-title>
 
         <v-spacer></v-spacer>
-        <span class="text-caption text-white">View More</span>
-        <v-btn
-          density="compact"
-          icon="i-material-symbols-chevron-right-box"
-          color="grey"
-        ></v-btn>
+        <span class="text-caption text-white">View All</span>
+        <v-btn density="compact" icon="mdi-chevron-right-box" color="grey" />
       </v-toolbar>
       <h6 class="text-white ml-4 mt-n4">
         <span class="text-red">20+ new </span> dishes added this week
@@ -107,27 +126,23 @@
         <v-col cols="12" sm="1" class="text-center"></v-col>
       </v-row>
     </v-col>
-    <v-col cols="12" md="6" sm="12">
-      <Checkout />
+    <v-col cols="12" md="4" sm="12">
+      <Checkout class="sticky" style="top: 2px" />
     </v-col>
   </v-row>
 </template>
 
 <script setup>
-  import SidBar from '@/components/SideBar.vue'
   import DishCard from '@/components/DishCard.vue'
-  import MobileNav from '@/components/MobileNav.vue'
   import Checkout from '@/components/Checkout.vue'
-  import Categories from '@/components/Categories.vue'
   import CatCarousel from '@/components/CatCarousel.vue'
-  import Quantity from '@/components/Quantity.vue'
   import { useDishStore } from '@/stores/dish'
   const dish = useDishStore()
   const dishes = dish.dishes
 </script>
 <script>
   export default {
-    components: { DishCard, MobileNav, CatCarousel, Quantity, Checkout },
+    components: { DishCard, CatCarousel, Checkout },
     data: () => ({
       items: [
         {
@@ -164,5 +179,31 @@
   }
   .mLeft {
     margin-left: 90px;
+  }
+  .custom-parallax::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgb(29, 29, 29) 100%
+    );
+    pointer-events: none; /* Ensure clicks pass through the overlay */
+  }
+
+  /* we will explain what these classes do next! */
+  .v-enter-active,
+  .v-leave-active {
+    transition: opacity 0.5s ease;
+  }
+
+  .v-enter-from,
+  .v-leave-to {
+    opacity: 0;
   }
 </style>
