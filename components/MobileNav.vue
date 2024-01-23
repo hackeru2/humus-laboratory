@@ -2,12 +2,12 @@
   <v-layout
     v-show="$nuxt.$vuetify.display.xs.value"
     class="overflow-visible"
-    style="height: 56px; position: sticky; top: 0"
+    style="height: 56px; position: sticky; top: 10px"
   >
     <v-bottom-navigation v-model="value" color="#FF6259" mode="shift">
       <v-btn v-for="(link, index) in links" :key="index">
         <v-icon>{{ link.icon }}</v-icon>
-        
+
         <span>{{ link.text }}</span>
       </v-btn>
     </v-bottom-navigation>
