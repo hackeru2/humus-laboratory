@@ -1,13 +1,13 @@
 <template>
-  <v-row >
+  <v-row>
     <v-col cols="12" class="mt-0 p-0">
-      <v-img
+      <v-parallax
         src="/paralax.png"
         class="custom-parallax"
-        style="height: auto; width: auto"
+        style="height: 900px; width: 100%"
       >
         <div
-          class="d-flex flex-column fill-height justify-center align-center text-white p-10 text-center"
+          class="sticky d-flex flex-column fill-height justify-center align-center text-white p-10 text-center"
         >
           <h1 class="text-h4 font-weight-thin mb-4">Humus Laboratory</h1>
           <h4 class="subheading">Order your Dish today!</h4>
@@ -27,7 +27,7 @@
             voluptatem dolorum beatae quo non.
           </p>
         </div>
-      </v-img>
+      </v-parallax>
     </v-col>
     <v-col cols="12" sm="12" md="8">
       <v-text-field
@@ -189,6 +189,7 @@
   .custom-parallax::before {
     content: '';
     display: block;
+    background-attachment: scroll;
     position: absolute;
     top: 0;
     left: 0;
@@ -196,7 +197,7 @@
     bottom: 0;
     background: linear-gradient(
         to bottom,
-        rgba(255, 255, 255, 0) 55%,
+        rgba(255, 255, 255, 0) 50%,
         rgb(29, 29, 29) 100%
       ),
       linear-gradient(to top, rgba(255, 255, 255, 0) 85%, rgb(29, 29, 29) 100%),
