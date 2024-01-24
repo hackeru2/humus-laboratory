@@ -1,6 +1,5 @@
 <template>
   <v-navigation-drawer
-    v-if="$nuxt.$vuetify.display.smAndUp.value"
     v-model="drawer"
     :rail="rail || $nuxt.$vuetify.display.smAndDown.value"
     permanent
@@ -75,7 +74,7 @@
 
   const drawer = ref(false)
   const imgSize = 150
-  const rail = ref(true)
+  const rail = ref(false)
 
   onMounted(() => {
     drawer.value = true

@@ -6,9 +6,9 @@
       id="inspire"
       :style="{ background: $vuetify.theme.themes.light.colors.primary }"
     >
-      <mobile-nav v-if="$nuxt.$vuetify.display.xs.value" />
+      <SideBar v-if="$nuxt.$vuetify.display.smAndUp.value" />
+      <mobile-nav v-else />
 
-      <SideBar v-else />
       <v-main class="">
         <slot />
       </v-main>

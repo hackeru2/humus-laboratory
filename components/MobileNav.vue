@@ -1,7 +1,7 @@
 <template>
   <v-layout
-    class="overflow-visible"
-    style="height: 56px; position: sticky; top: 10px"
+    class="mobile-nav md:hidden sm:hidden"
+    style="height: 56px; position: sticky; top: 20px"
   >
     <v-bottom-navigation v-model="value" color="#FF6259" mode="shift">
       <v-btn v-for="(link, index) in links" :key="index">
@@ -41,3 +41,17 @@
     },
   }
 </script>
+<style scoped>
+  .mobile-nav {
+    animation: fadeIn 2s ease-in;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+</style>
