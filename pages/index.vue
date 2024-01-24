@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col cols="12" class="mt-0 p-0">
+    <v-col cols="12" class="mt-0 p-0 overflow-hidden">
       <v-img
         src="/paralax.png"
         class="custom-parallax"
@@ -187,7 +187,7 @@
     margin-left: 90px;
   }
   .custom-parallax::before {
-    content: 'sdfdaf wefweafe weafawfeawefwea wefwaefwefew wefwaefwafae';
+    content: '';
     display: block;
     position: absolute;
     top: 0;
