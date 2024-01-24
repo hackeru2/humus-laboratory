@@ -1,9 +1,5 @@
 <template>
-  <v-layout
-    v-if="false"
-    class="overflow-visible mobile-nav md:hidden sm:hidden"
-    style="height: 56px; position: sticky; top: 20px"
-  >
+  <v-layout style="height: 56px; position: sticky; top: 20px">
     <v-bottom-navigation v-model="value" color="#FF6259" mode="shift">
       <v-btn v-for="(link, index) in links" :key="index">
         <v-icon>{{ link.icon }}</v-icon>

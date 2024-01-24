@@ -9,9 +9,12 @@
       <mobile-nav v-if="!$nuxt.$vuetify.display.smAndUp.value" />
 
       <v-parallax src="/paralax.png" class="custom-parallax">
-        <div
-          style="height: 900px"
-          class="d-flex flex-column justify-center align-center text-white p-10 text-center"
+        <v-sheet
+          height="900px"
+          variant="transparent"
+          max-width="90vw"
+          color="transparent"
+          class="mx-auto sm:pl-40 sm:ml-30 md:pl-40 md:ml-40 d-flex flex-column justify-center align-center text-white p-10 text-center"
         >
           <h1 class="text-h4 font-weight-thin mb-4">Humus Laboratory</h1>
           <h4 class="subheading">Order your Dish today!</h4>
@@ -30,7 +33,7 @@
             praesentium sapiente dolor voluptas inventore sunt magnam doloremque
             voluptatem dolorum beatae quo non.
           </p>
-        </div>
+        </v-sheet>
       </v-parallax>
       <SideBar v-if="$nuxt.$vuetify.display.smAndUp.value" />
 

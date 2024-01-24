@@ -16,7 +16,7 @@
     </div>
     <v-card class="rounded-e-xl me" width="60" height="400" color="#545454">
     </v-card>
-    <v-list class="top">
+    <v-list class="top" mode="shift">
       <v-list-item
         v-for="(item, i) in links"
         :key="i"
@@ -79,7 +79,7 @@
   onMounted(async () => {
     setTimeout(() => {
       drawer.value = true
-    }, 5000)
+    }, 1000)
   })
 </script>
 
