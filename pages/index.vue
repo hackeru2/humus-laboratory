@@ -1,30 +1,5 @@
 <template>
   <v-row>
-    <v-col cols="12" class="mt-0 p-0">
-      <v-parallax src="/paralax.png" class="custom-parallax">
-        <div
-          class="d-flex flex-column fill-height justify-center align-center text-white p-10 text-center"
-        >
-          <h1 class="text-h4 font-weight-thin mb-4">Humus Laboratory</h1>
-          <h4 class="subheading">Order your Dish today!</h4>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores
-            repellendus
-          </p>
-          <p>neque soluta autem natus enim quibusdam ut nemo veritatis</p>
-          <p>
-            Qquidem asperiores at aperiam ipsa quas eaque. Obcaecati rem dolorem
-            saepe!
-          </p>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat
-            ipsa nihil quis libero dolorem sequi perspiciatis, quisquam,
-            praesentium sapiente dolor voluptas inventore sunt magnam doloremque
-            voluptatem dolorum beatae quo non.
-          </p>
-        </div>
-      </v-parallax>
-    </v-col>
     <v-col cols="12" sm="12" md="8">
       <v-text-field
         density="compact"
@@ -185,7 +160,7 @@
   .custom-parallax::before {
     content: '';
     display: block;
-
+    height: 900px;
     position: absolute;
     top: 0;
     left: 0;
@@ -197,12 +172,6 @@
         rgb(29, 29, 29) 100%
       ),
       linear-gradient(to top, rgba(255, 255, 255, 0) 85%, rgb(29, 29, 29) 100%),
-      linear-gradient(
-        to left,
-        rgba(255, 255, 255, 0) 85%,
-
-        rgba(29, 29, 29, 0) 100%
-      ),
       linear-gradient(
         to right,
         rgba(255, 255, 255, 0) 85%,

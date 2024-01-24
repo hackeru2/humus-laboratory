@@ -1,5 +1,6 @@
 <template>
   <v-layout
+    v-if="false"
     class="overflow-visible mobile-nav md:hidden sm:hidden"
     style="height: 56px; position: sticky; top: 20px"
   >
