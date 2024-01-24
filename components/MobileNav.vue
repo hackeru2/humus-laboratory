@@ -1,5 +1,5 @@
 <template>
-  <v-layout style="height: 56px; position: sticky; top: 20px">
+  <v-layout style="height: 56px; position: sticky; top: 0px">
     <v-bottom-navigation v-model="value" color="#FF6259" mode="shift">
       <v-btn v-for="(link, index) in links" :key="index">
         <v-icon>{{ link.icon }}</v-icon>
