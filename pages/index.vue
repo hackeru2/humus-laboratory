@@ -1,13 +1,13 @@
 <template>
   <v-row>
     <v-col cols="12" class="mt-0 p-0">
-      <v-parallax
+      <v-img
         src="/paralax.png"
         class="custom-parallax"
-        style="height: 900px; width: 100%"
+        style="height: auto; width: auto"
       >
         <div
-          class="sticky d-flex flex-column fill-height justify-center align-center text-white p-10 text-center"
+          class="d-flex flex-column fill-height justify-center align-center text-white p-10 text-center"
         >
           <h1 class="text-h4 font-weight-thin mb-4">Humus Laboratory</h1>
           <h4 class="subheading">Order your Dish today!</h4>
@@ -27,7 +27,7 @@
             voluptatem dolorum beatae quo non.
           </p>
         </div>
-      </v-parallax>
+      </v-img>
     </v-col>
     <v-col cols="12" sm="12" md="8">
       <v-text-field
@@ -187,7 +187,7 @@
     margin-left: 90px;
   }
   .custom-parallax::before {
-    content: '';
+    content: 'sdfdaf wefweafe weafawfeawefwea wefwaefwefew wefwaefwafae';
     display: block;
     position: absolute;
     top: 0;
@@ -216,13 +216,4 @@
   }
 
   /* we will explain what these classes do next! */
-  .v-enter-active,
-  .v-leave-active {
-    transition: opacity 0.5s ease;
-  }
-
-  .v-enter-from,
-  .v-leave-to {
-    opacity: 0;
-  }
 </style>
