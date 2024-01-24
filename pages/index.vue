@@ -1,6 +1,6 @@
 <template>
-  <v-row>
-    <v-col cols="12" class="mt-0 p-0 overflow-hidden">
+  <v-row >
+    <v-col cols="12" class="mt-0 p-0">
       <v-img
         src="/paralax.png"
         class="custom-parallax"
@@ -196,7 +196,7 @@
     bottom: 0;
     background: linear-gradient(
         to bottom,
-        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0) 55%,
         rgb(29, 29, 29) 100%
       ),
       linear-gradient(to top, rgba(255, 255, 255, 0) 85%, rgb(29, 29, 29) 100%),
