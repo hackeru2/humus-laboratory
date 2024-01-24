@@ -76,8 +76,10 @@
   const imgSize = 150
   const rail = ref(false)
 
-  onMounted(() => {
-    drawer.value = true
+  onMounted(async () => {
+    setTimeout(() => {
+      drawer.value = true
+    }, 5000)
   })
 </script>
 

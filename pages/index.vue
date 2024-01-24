@@ -1,13 +1,9 @@
 <template>
   <v-row>
     <v-col cols="12" class="mt-0 p-0">
-      <v-parallax
-        src="/paralax.png"
-        class="custom-parallax"
-        style="height: 900px; width: 100%"
-      >
+      <v-parallax src="/paralax.png" class="custom-parallax">
         <div
-          class="sticky d-flex flex-column fill-height justify-center align-center text-white p-10 text-center"
+          class="d-flex flex-column fill-height justify-center align-center text-white p-10 text-center"
         >
           <h1 class="text-h4 font-weight-thin mb-4">Humus Laboratory</h1>
           <h4 class="subheading">Order your Dish today!</h4>
@@ -189,7 +185,7 @@
   .custom-parallax::before {
     content: '';
     display: block;
-    background-attachment: scroll;
+
     position: absolute;
     top: 0;
     left: 0;
