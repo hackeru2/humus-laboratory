@@ -4,6 +4,7 @@
     v-model="drawer"
     :rail="rail || $nuxt.$vuetify.display.smAndDown.value"
     permanent
+    :floating="true"
     color="#2B2B2B"
   >
     <div>
@@ -71,12 +72,14 @@
   import MyImg from './MyImg.vue'
 
   import { onMounted } from 'vue'
-  onMounted(() => {
-    console.log(document.querySelector('.test'))
-  })
-  const drawer = ref(true)
+
+  const drawer = ref(false)
   const imgSize = 150
-  const rail = ref(false)
+  const rail = ref(true)
+
+  onMounted(() => {
+    drawer.value = true
+  })
 </script>
 
 <style scoped>

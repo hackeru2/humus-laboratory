@@ -1,5 +1,5 @@
 <template>
-  <v-container class="pa-4 text-center">
+  <v-container class="text-center">
     <v-row
       style="max-height: 130px; overflow-y: hidden"
       align="center"

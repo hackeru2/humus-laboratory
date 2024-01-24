@@ -15,12 +15,7 @@
     <span class="text-red">2+ new </span> categories added this week
   </h6>
 
-  <v-slide-group
-    v-model="model"
-    class="pa-4"
-    selected-class="selected-class"
-    show-arrows
-  >
+  <v-slide-group v-model="model" selected-class="selected-class" show-arrows>
     <v-slide-group-item
       v-for="(item, n) in items"
       :key="n"

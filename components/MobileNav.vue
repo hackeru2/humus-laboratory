@@ -1,6 +1,5 @@
 <template>
   <v-layout
-    v-show="$nuxt.$vuetify.display.xs.value"
     class="overflow-visible"
     style="height: 56px; position: sticky; top: 10px"
   >
