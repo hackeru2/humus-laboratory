@@ -4,7 +4,7 @@
       <v-parallax
         src="/paralax.png"
         class="custom-parallax"
-        style="height: 900px; max-height: 100dvh"
+        style="height: 900px; width: 100%"
       >
         <div
           class="sticky d-flex flex-column fill-height justify-center align-center text-white p-10 text-center"

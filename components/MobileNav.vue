@@ -1,6 +1,6 @@
 <template>
   <v-layout
-    class="mobile-nav md:hidden sm:hidden"
+    class="overflow-visible mobile-nav md:hidden sm:hidden"
     style="height: 56px; position: sticky; top: 20px"
   >
     <v-bottom-navigation v-model="value" color="#FF6259" mode="shift">
