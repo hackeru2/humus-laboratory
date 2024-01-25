@@ -48,6 +48,7 @@ export default defineVuetifyConfiguration({
     VCarousel: {
       color: 'primary',
     },
+    
     VRow: { style: 'margin:0 !important' },
     VBtn: {
       // color: 'primary',

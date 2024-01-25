@@ -11,7 +11,6 @@
 
     <v-card c color="#303030" elevation="0">
       <v-card-item class="text-center">
-        <v-btn class="btn-blue">asd</v-btn>
         <v-card-title class="mt-10">{{ dish.name }}</v-card-title>
 
         <v-card-subtitle>
@@ -53,5 +52,6 @@
 <style scoped>
   .imag {
     z-index: 9999 !important;
+    margin-bottom: -25px;
   }
 </style>

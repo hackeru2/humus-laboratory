@@ -6,12 +6,17 @@
     :floating="true"
     color="#2B2B2B"
   >
-    <div>
+    <div v-show="$vuetify.display.height > 700">
       <my-img
         class="scale-11 mx-auto"
+        :class="{
+          'border-md selected-class': dataStore.scrolledTo == 'Home',
+        }"
+        style="border-radius: 100px"
         src="/logo.png"
         :width="imgSize"
         :height="imgSize"
+        @click="scrollToTop"
       />
     </div>
     <v-card class="rounded-e-xl me" width="60" height="400" color="#545454">
@@ -21,9 +26,11 @@
         v-for="(item, i) in links"
         :key="i"
         :value="item"
+        :to="'/#' + item.text"
         class="mb-5"
-        color="#FF6259"
+        :color="dataStore.scrolledTo == item.text ? 'red' : 'white'"
         variant="plain"
+        @click="setScrolledTo(item.text)"
       >
         <template #prepend>
           <v-icon class="test" :icon="item.icon"></v-icon>
@@ -44,15 +51,20 @@
       "
       @click="rail = !rail"
     >
-      <v-row align="center" justify="center">
-        <v-col cols="auto">
+      <v-row
+        v-show="$vuetify.display.height > 700"
+        align="center"
+        justify="center"
+        no-gutters
+      >
+        <v-col md="4" class="sm:my-1">
           <v-btn
             icon="i-material-symbols-settings"
             size="small"
             color="#5F3B39"
           ></v-btn>
         </v-col>
-        <v-col cols="auto">
+        <v-col md="4" class="sm:my-1">
           <v-badge dot color="#FF6259">
             <v-btn
               icon="i-material-symbols-notifications"
@@ -71,11 +83,15 @@
   import MyImg from './MyImg.vue'
 
   import { onMounted } from 'vue'
-
+  const dataStore = useDataStore()
   const drawer = ref(false)
   const imgSize = 150
   const rail = ref(false)
-
+  const selected = ref(null)
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+  const setScrolledTo = (txt) => dataStore.setScrolledTo(txt)
   onMounted(async () => {
     setTimeout(() => {
       drawer.value = true

@@ -14,6 +14,11 @@ const {
 } = site
 
 export default defineNuxtConfig({
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth',
+    },
+  },
   extends: [
     './my-nuxt-vuetify-tailwindcss-layer', // NavBar and Footer components
   ],
@@ -294,6 +299,8 @@ export default defineNuxtConfig({
         // restartOnConfigUpdate: true,
         restartOnThemeUpdate: true,
       },
+      plugins: ['~/plugins/router.ts'],
+
       // plugins: [
       //   {
       //     name: 'My Awesome Lib 3.0',

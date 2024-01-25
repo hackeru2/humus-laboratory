@@ -1,18 +1,23 @@
 <template>
   <v-row>
-    <v-col cols="12" sm="12" md="8">
+    <v-col cols="12" sm="12" md="8" class="">
       <v-text-field
         density="compact"
         placeholder="Search restaurant, Food, Cuisine or a Dish"
         append-inner-icon="mdi-magnify"
         variant="outlined"
         rounded
-        class="text-grey mx-8"
+        class="text-grey"
       ></v-text-field>
       <!-- <Categories /> -->
       <CatCarousel :items="items" :dish="dishes[0]" />
       <v-toolbar color="transparent" class="pr-1 mt-n2">
-        <v-toolbar-title class="text-white">Popular Dishes</v-toolbar-title>
+        <v-toolbar-title
+          id="Dishes"
+          v-intersect="dataStore.onIntersect"
+          class="text-white"
+          >Popular Dishes</v-toolbar-title
+        >
 
         <v-spacer></v-spacer>
         <span class="text-caption text-white">View All</span>
@@ -39,7 +44,10 @@
         ></v-btn>
       </v-toolbar>
       <h6 class="text-white ml-4 mt-n4">
-        <span class="text-red">Wow 100+ new </span> Order got this week
+        <span id="Orders" v-intersect="dataStore.onIntersect" class="text-red"
+          >Wow 100+ new
+        </span>
+        Order got this week
       </h6>
       <v-card class="rounded-xl ma-2 pa-1" color="#424343">
         <v-row>
@@ -110,42 +118,38 @@
 </template>
 
 <script setup>
+  import { useRouter } from 'vue-router'
   import DishCard from '@/components/DishCard.vue'
   import Checkout from '@/components/Checkout.vue'
   import CatCarousel from '@/components/CatCarousel.vue'
   import { useDishStore } from '@/stores/dish'
+  const router = useRouter()
   const dish = useDishStore()
   const dishes = dish.dishes
-</script>
-<script>
-  export default {
-    components: { DishCard, CatCarousel, Checkout },
-    data: () => ({
-      items: [
-        {
-          name: 'humus',
-        },
-        {
-          name: 'thina',
-        },
-        {
-          name: 'falafel',
-        },
-        {
-          name: 'spice',
-        },
-        {
-          name: 'hatzils',
-        },
-        {
-          name: 'soup',
-        },
-        {
-          name: 'logo',
-        },
-      ],
-    }),
-  }
+  const dataStore = useDataStore()
+  const items = [
+    {
+      name: 'humus',
+    },
+    {
+      name: 'thina',
+    },
+    {
+      name: 'falafel',
+    },
+    {
+      name: 'spice',
+    },
+    {
+      name: 'hatzils',
+    },
+    {
+      name: 'soup',
+    },
+    {
+      name: 'logo',
+    },
+  ]
 </script>
 <style scoped>
   .mRight {

@@ -1,5 +1,10 @@
 <template>
-  <v-toolbar color="transparent" class="pr-1 mt-n2">
+  <v-toolbar
+    id="Categories"
+    v-intersect="dataStore.onIntersect"
+    color="transparent"
+    class="pr-1 mt-n2"
+  >
     <v-toolbar-title class="text-white">Categories</v-toolbar-title>
 
     <v-spacer></v-spacer>
@@ -53,6 +58,9 @@
     </v-card>
   </v-expand-transition>
 </template>
+<script setup>
+  const dataStore = useDataStore()
+</script>
 <script>
   import CatAvatar from '@/components/CatAvatar.vue'
   import DishCard from './DishCard.vue'
@@ -62,6 +70,7 @@
     props: ['items', 'dish'],
     data: () => ({
       model: null,
+      isIntersecting: null,
     }),
   }
 </script>
