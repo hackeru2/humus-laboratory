@@ -161,29 +161,6 @@
   .mLeft {
     margin-left: 90px;
   }
-  .custom-parallax::before {
-    content: '';
-    display: block;
-    height: 900px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0) 50%,
-        rgb(29, 29, 29) 100%
-      ),
-      linear-gradient(to top, rgba(255, 255, 255, 0) 85%, rgb(29, 29, 29) 100%),
-      linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0) 85%,
-
-        rgba(29, 29, 29, 0) 100%
-      );
-    pointer-events: none; /* Ensure clicks pass through the overlay */
-  }
-
+ 
   /* we will explain what these classes do next! */
 </style>
