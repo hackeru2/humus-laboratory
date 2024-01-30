@@ -1,13 +1,19 @@
 <template>
-  <v-layout style="height: 56px; position: sticky; top: 0px" class="mobile-nav">
-    <v-bottom-navigation v-model="value" color="#FF6259" mode="shift">
-      <v-btn v-for="(link, index) in links" :key="index">
-        <v-icon>{{ link.icon }}</v-icon>
+  <v-expand-transition>
+    <v-layout
+      v-if="showMobile"
+      style="height: 56px; position: sticky; top: 0px"
+      class="mobile-nav"
+    >
+      <v-bottom-navigation v-model="value" color="#FF6259" mode="shift">
+        <v-btn v-for="(link, index) in links" :key="index">
+          <v-icon>{{ link.icon }}</v-icon>
 
-        <span>{{ link.text }}</span>
-      </v-btn>
-    </v-bottom-navigation>
-  </v-layout>
+          <span>{{ link.text }}</span>
+        </v-btn>
+      </v-bottom-navigation>
+    </v-layout>
+  </v-expand-transition>
 </template>
 <script setup>
   import { links } from '@/assets/data/links'
@@ -16,6 +22,7 @@
   export default {
     data() {
       return {
+        showMobile: false,
         value: 0,
         tabs: null,
       }
@@ -36,11 +43,14 @@
         }
       },
     },
+    mounted() {
+      this.showMobile = true
+    },
   }
 </script>
 <style scoped>
   .mobile-nav {
-    animation: fadeIn 2s ease-in;
+    animation: fadeIn 0.5s ease-in;
   }
   @keyframes fadeIn {
     from {

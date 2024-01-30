@@ -1,11 +1,11 @@
 <template>
-  <v-parallax src="/paralax.png" class="custom-parallax">
+  <v-img src="/paralax.png" class="custom-parallax" cover>
     <v-sheet
       height="900px"
       variant="transparent"
       max-width="90vw"
       color="transparent"
-      class="mx-auto sm:pl-40 sm:ml-30 md:pl-40 md:ml-40 d-flex flex-column justify-center align-center text-white p-10 text-center"
+      class="sticky mx-auto sm:pl-40 sm:ml-30 md:pl-40 md:ml-40 d-flex flex-column justify-center align-center text-white p-10 text-center"
     >
       <h1
         id="Home"
@@ -31,7 +31,7 @@
         dolorum beatae quo non.
       </p>
     </v-sheet>
-  </v-parallax>
+  </v-img>
 </template>
 
 <script setup>
@@ -39,10 +39,20 @@
 </script>
 
 <style>
+  .custom-parallax {
+    height: 100vh;
+    width: 100vw;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
   .custom-parallax::before {
     content: '';
     display: block;
-    height: 200vh;
+    padding: 0;
+    margin: 0;
+    height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
