@@ -48,7 +48,9 @@ export default defineVuetifyConfiguration({
     VCarousel: {
       color: 'primary',
     },
-    
+    VCardTitle: {
+      style: 'white-space:normal',
+    },
     VRow: { style: 'margin:0 !important' },
     VBtn: {
       // color: 'primary',

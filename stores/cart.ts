@@ -1,33 +1,21 @@
-// stores/cart.ts
-import { acceptHMRUpdate } from 'pinia'
-import type { SubscriptionCallbackMutation } from 'pinia'
+// stores/car.js
+// import { defineStore } from 'pinia'
 import { ref } from 'vue'
-
-// Define the state type for your store
-interface CartState {
-  items: Record<string, any> // Adjust the type based on your actual item structure
-}
+import { defineStore } from 'pinia'
 
 export const useCartStore = defineStore('cart', () => {
   const loadCartFromLocalStorage = () => {
     // const storedCart = localStorage.getItem('cart')
     // return storedCart ? JSON.parse(storedCart).items : {}
+    return {}
   }
 
   const items = ref(loadCartFromLocalStorage())
-
-  function addItem(item: any) {
+  function addItem(item) {
     items.value = { ...items.value, [item.dish_id]: item }
   }
 
-  function onClickAdd(dish: any) {
-    const dish_id = dish._id
-    const cart_item = items.value[dish_id]
-    if (!cart_item) return createCartItem(dish)
-    items.value[dish_id].quantity++
-  }
-
-  function createCartItem(dish: any) {
+  function createCartItem(dish) {
     return addItem({
       ...dish,
       _id: null,
@@ -36,34 +24,38 @@ export const useCartStore = defineStore('cart', () => {
     })
   }
 
-  function removeItem(_id: string) {
+  function removeItem(_id) {
     console.log(_id)
-    if (items.value[_id]) {
-      items.value[_id].quantity--
-    }
+
+    items.value[_id].quantity--
   }
 
   return { items, removeItem, addItem, onClickAdd }
+
+  function onClickAdd(dish) {
+    const dish_id = dish._id
+    const cart_item = items.value[dish_id]
+    if (!cart_item) return createCartItem(dish)
+    items.value[dish_id].quantity++
+    //items.value[dish_id].quantity++;
+  }
 })
 
-// Subscribe to store mutations and update local storage
-useCartStore().$subscribe(
-  (mutation: SubscriptionCallbackMutation<CartState>, state) => {
-    if (
-      mutation.events &&
-      'newValue' in mutation.events &&
-      'dish_id' in mutation.events.target
-    ) {
-      delete state.items[mutation.events.target.dish_id]
-    }
+// useCartStore().$subscribe((mutation, state) => {
+//   // import { MutationType } from 'pinia'
+//   mutation.type // 'direct' | 'patch object' | 'patch function'
+//   // same as cartStore.$id
+//   mutation.storeId // 'cart'
+//   // only available with mutation.type === 'patch object'
+//   mutation.payload // patch object passed to cartStore.$patch()
 
-    const proxyState = JSON.parse(JSON.stringify(state))
-    // localStorage.setItem('cart', JSON.stringify(proxyState))
-    // console.log(localStorage.getItem('cart'))
-  },
-)
-
-// Hot module replacement
-if (import.meta.hot) {
-  import.meta.hot.accept(acceptHMRUpdate(useCartStore, import.meta.hot))
-}
+//   // persist the whole state to the local storage whenever it changes
+//   const proxyState = JSON.parse(JSON.stringify(state))
+//   if (!mutation.events.newValue)
+//     delete proxyState.items[mutation.events.target.dish_id]
+//   localStorage.setItem('cart', JSON.stringify(proxyState))
+//   console.log(localStorage.getItem('cart'))
+// })
+// if (import.meta.hot) {
+//   import.meta.hot.accept(acceptHMRUpdate(useCartStore, import.meta.hot))
+// }

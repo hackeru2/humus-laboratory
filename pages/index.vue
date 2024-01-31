@@ -11,27 +11,7 @@
       ></v-text-field>
       <!-- <Categories /> -->
       <CatCarousel :items="items" :dish="dishes[0]" />
-      <v-toolbar color="transparent" class="pr-1 mt-n2">
-        <v-toolbar-title
-          id="Dishes"
-          v-intersect="dataStore.onIntersect"
-          class="text-white"
-          >Popular Dishes</v-toolbar-title
-        >
-
-        <v-spacer></v-spacer>
-        <span class="text-caption text-white">View All</span>
-        <v-btn density="compact" icon="mdi-chevron-right-box" color="grey" />
-      </v-toolbar>
-      <h6 class="text-white ml-4 mt-n4">
-        <span class="text-red">20+ new </span> dishes added this week
-      </h6>
-      <div
-        class="d-flex flex-wrap justify-space-evenly mt-4"
-        color="transparent"
-      >
-        <DishCard v-for="(dish, i) in dishes" :key="i" :dish="dish" />
-      </div>
+      <PopularDishes />
       <v-toolbar color="transparent" class="pr-1 mt-n2">
         <v-toolbar-title class="text-white">Order Reports</v-toolbar-title>
 
@@ -161,6 +141,6 @@
   .mLeft {
     margin-left: 90px;
   }
- 
+
   /* we will explain what these classes do next! */
 </style>
