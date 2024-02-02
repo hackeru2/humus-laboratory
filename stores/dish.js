@@ -5,6 +5,17 @@ import { ref } from 'vue'
 export const useDishStore = defineStore('dish', () => {
   const dishes = ref([
     {
+      _id: '_3_a',
+      image: 'royal_humus_thina.png',
+      desc: 'Indulge in a savory journey with our Hatzil Thina Temptation. Immerse yourself in the rich flavors of roasted eggplants and creamy tahini for a culinary delight!',
+      name: 'Hatzilicious Thina Fusion',
+      categories: ['hatzils', 'thina'],
+      money: '$10.00',
+      price: 10,
+      star: '4.5',
+      popular: false,
+    },
+    {
       _id: '_1',
       image: '500-g-humus-opacity.png',
       desc: 'Delight in the rich blend of chickpeas and tahini with our delectable Humus Fusion. A harmonious dish that transcends taste boundaries!',
@@ -14,6 +25,18 @@ export const useDishStore = defineStore('dish', () => {
       price: 10,
       star: '4.5',
       popular: true,
+    },
+    {
+      _id: '_4',
+      // image: 'spicy-humus.png',
+      image: 'spice_opacity.png',
+      desc: 'Ignite your taste buds with our Sizzling Spice Fusion. A symphony of intense flavors that will transport you to a world of culinary excitement!',
+      name: 'Flaming Spice Eruption',
+      categories: ['spice'],
+      money: '$12.00',
+      price: 12,
+      star: '4.7',
+      popular: false,
     },
     {
       _id: '_2',
@@ -37,17 +60,7 @@ export const useDishStore = defineStore('dish', () => {
       star: '4.5',
       popular: false,
     },
-    {
-      _id: '_3_a',
-      image: 'royal_humus_thina.png',
-      desc: 'Indulge in a savory journey with our Hatzil Thina Temptation. Immerse yourself in the rich flavors of roasted eggplants and creamy tahini for a culinary delight!',
-      name: 'Hatzilicious Thina Fusion',
-      categories: ['hatzils', 'thina'],
-      money: '$10.00',
-      price: 10,
-      star: '4.5',
-      popular: false,
-    },
+
     {
       _id: '_3_b',
       image: 'silver_humus_thina.png',
@@ -59,18 +72,7 @@ export const useDishStore = defineStore('dish', () => {
       star: '4.5',
       popular: false,
     },
-    {
-      _id: '_4',
-      // image: 'spicy-humus.png',
-      image: 'spice_opacity.png',
-      desc: 'Ignite your taste buds with our Sizzling Spice Fusion. A symphony of intense flavors that will transport you to a world of culinary excitement!',
-      name: 'Flaming Spice Eruption',
-      categories: ['spice'],
-      money: '$12.00',
-      price: 12,
-      star: '4.7',
-      popular: false,
-    },
+
     {
       _id: '_5',
       image: 'spice_extravagant.png',

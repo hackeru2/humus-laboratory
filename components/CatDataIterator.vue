@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-data-iterator :items="modelDishes" :search="search">
+    <v-data-iterator :items="myDishes" :search="search">
       <!-- <template #header>
         <v-toolbar class="px-2">
           <v-text-field
@@ -28,9 +28,17 @@
     </v-data-iterator>
   </v-card>
 </template>
+<script setup>
+  const props = defineProps({
+    category: { default: [] },
+  })
+  const dishStore = useDishStore()
+  const myDishes = dishStore.dishes.filter((dish) => {
+    return dish.categories && dish.categories.includes(props.category.name)
+  })
+</script>
 <script>
   export default {
-    props: ['modelDishes'],
     data: () => ({
       search: '',
       games: [

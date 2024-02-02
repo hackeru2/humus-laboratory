@@ -14,9 +14,11 @@
   <h6 class="text-white ml-4 mt-n4">
     <span class="text-red">20+ new </span> dishes added this week
   </h6>
-  <div class="d-flex flex-wrap justify-space-evenly mt-4" color="transparent">
-    <DishCard v-for="(_dish, i) in popularDishes" :key="i" :dish="_dish" />
-  </div>
+  <v-card elevation="2">
+    <div class="d-flex flex-wrap justify-space-evenly mt-4" color="transparent">
+      <DishCard v-for="(_dish, i) in popularDishes" :key="i" :dish="_dish" />
+    </div>
+  </v-card>
 </template>
 
 <script setup>

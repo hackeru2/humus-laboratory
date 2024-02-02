@@ -5,21 +5,17 @@
       icon="i-material-symbols-add-circle-outline"
       variant="text"
       :disabled="disabledPlus"
-      @click="cart.onClickAdd(dish)"
+      @click="cart.onClickAdd(dish, id)"
     />
     <span class="quantity-number">
-      {{
-        cart.items[dish._id ?? dish.dish_id]
-          ? cart.items[dish._id ?? dish.dish_id].quantity
-          : 0
-      }}</span
+      {{ cart.items[id] ? cart.items[id].quantity : 0 }}</span
     >
     <v-btn
       v-ripple="{ class: `text-red` }"
       icon="i-material-symbols-do-not-disturb-on-outline"
       :disabled="disabledMinus"
       variant="text"
-      @click="cart.removeItem(dish._id)"
+      @click="cart.removeItem(id)"
     >
     </v-btn>
   </div>
@@ -32,16 +28,14 @@
     dish: Object,
   })
   const cart = useCartStore()
+  const id = computed(() => (dish._id ? dish._id : dish.dish_id))
+  const cartItem = computed(() => cart.items[id.value])
   const disabledMinus = computed(
-    () =>
-      !cart.items[dish._id ?? dish.dish_id] ||
-      !cart.items[dish._id ?? dish.dish_id].quantity,
+    () => !cartItem.value || !cartItem.value.quantity,
   )
-  const disabledPlus = computed(
-    () =>
-      cart.items[dish._id ?? dish.dish_id] &&
-      cart.items[dish._id ?? dish.dish_id].quantity >= 99,
-  )
+  const disabledPlus = computed(() => {
+    return cartItem.value && cartItem.value.quantity >= 99
+  })
 </script>
 
 <style>

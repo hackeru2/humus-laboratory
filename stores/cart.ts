@@ -32,11 +32,11 @@ export const useCartStore = defineStore('cart', () => {
 
   return { items, removeItem, addItem, onClickAdd }
 
-  function onClickAdd(dish) {
-    const dish_id = dish._id
-    const cart_item = items.value[dish_id]
+  function onClickAdd(dish,id) {
+    const dish_id = id
+    const cart_item = items.value[id]
     if (!cart_item) return createCartItem(dish)
-    items.value[dish_id].quantity++
+    items.value[id].quantity++
     //items.value[dish_id].quantity++;
   }
 })

@@ -10,7 +10,7 @@
         class="text-grey"
       ></v-text-field>
       <!-- <Categories /> -->
-      <CatCarousel :items="items" />
+      <CatCarousel />
       <PopularDishes />
       <v-toolbar color="transparent" class="pr-1 mt-n2">
         <v-toolbar-title class="text-white">Order Reports</v-toolbar-title>
@@ -91,39 +91,14 @@
         <v-col cols="12" sm="1" class="text-center"></v-col>
       </v-row>
     </v-col>
-    <v-col cols="12" sm="12" lg="4">
+    <v-col cols="12" sm="12" lg="4" class="pl-0">
       <Checkout class="sticky" style="top: 2px" />
     </v-col>
   </v-row>
 </template>
 
 <script setup>
-  const dish = useDishStore()
-  const dishes = dish.dishes
   const dataStore = useDataStore()
-  const items = [
-    {
-      name: 'humus',
-    },
-    {
-      name: 'thina',
-    },
-    {
-      name: 'falafel',
-    },
-    {
-      name: 'spice',
-    },
-    {
-      name: 'hatzils',
-    },
-    {
-      name: 'soup',
-    },
-    {
-      name: 'logo',
-    },
-  ]
 </script>
 <style scoped>
   .mRight {

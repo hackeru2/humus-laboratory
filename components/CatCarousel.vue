@@ -48,34 +48,67 @@
       </v-card>
     </v-slide-group-item>
   </v-slide-group>
-
-  <CatDataIterator :model-dishes="modelDishes" />
+  <v-card>
+    <!-- <v-tabs v-model="model" color="deep-purple-accent-4" align-tabs="center">
+      <v-tab :value="1">Landscape</v-tab>
+      <v-tab :value="2">City</v-tab>
+      <v-tab :value="3">Abstract</v-tab>
+    </v-tabs> -->
+    <v-window v-model="model">
+      <v-window-item v-for="(category, n) in items" :key="n" :value="n">
+        <v-container fluid>
+          <CatDataIterator :model-dishes="[]" :category="category" />
+        </v-container>
+      </v-window-item>
+    </v-window>
+  </v-card>
+  <!-- -->
 </template>
 <script setup>
-  const props = defineProps({
-    items: { type: Array, default: () => [] },
-  })
+  const items = [
+    {
+      name: 'humus',
+    },
+    {
+      name: 'thina',
+    },
+    {
+      name: 'falafel',
+    },
+    {
+      name: 'spice',
+    },
+    {
+      name: 'hatzils',
+    },
+    {
+      name: 'soup',
+    },
+    {
+      name: 'logo',
+    },
+  ]
   const dataStore = useDataStore()
-  const dishStore = useDishStore()
   const model = ref(null)
+  const dishStore = useDishStore()
   const selectedName = computed(() => {
     try {
-      return props.items[model.value].name
+      return items[model.value].name
     } catch (e) {
       return ''
     }
   })
   const modelDishes = computed(() =>
-    dishStore.dishes.filter(
-      (d) => d.categories && d.categories.includes(selectedName.value),
-    ),
+    dishStore.dishes.filter((d) => {
+      return d.categories && d.categories.includes(selectedName.value)
+    }),
   )
 </script>
 <script>
   import CatAvatar from '@/components/CatAvatar.vue'
-  import DishCard from './DishCard.vue'
+
   export default {
-    components: { DishCard, CatAvatar },
+    components: { CatAvatar },
   }
 </script>
 <style>
