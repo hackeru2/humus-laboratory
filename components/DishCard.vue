@@ -9,7 +9,12 @@
     max-width="90vw"
     :min-width="carousel ? '90%' : '330px'"
   >
-    <v-img height="70" :src="props.dish.image" class="imag"></v-img>
+    <v-img
+      height="70"
+      :lazy-src="props.dish.image"
+      :src="props.dish.image"
+      class="imag"
+    ></v-img>
 
     <v-card color="#303030" elevation="5">
       <v-card-item class="text-center">

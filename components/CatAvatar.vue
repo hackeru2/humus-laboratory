@@ -25,7 +25,8 @@
         <v-btn variant="flat">{{ item.name }}</v-btn>
       </v-overlay>
       <v-avatar size="100" rounded>
-        <v-img :src="item.name + '.png'" cover> </v-img>
+        <v-img :lazy-src="item.name + '.png'" :src="item.name + '.png'" cover>
+        </v-img>
       </v-avatar>
     </v-card>
   </v-hover>
