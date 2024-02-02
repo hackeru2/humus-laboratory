@@ -1,6 +1,6 @@
 <template>
   <v-row>
-    <v-col cols="12" sm="12" md="8" class="">
+    <v-col cols="12" sm="12" lg="8" class="">
       <v-text-field
         density="compact"
         placeholder="Search restaurant, Food, Cuisine or a Dish"
@@ -10,7 +10,7 @@
         class="text-grey"
       ></v-text-field>
       <!-- <Categories /> -->
-      <CatCarousel :items="items" :dish="dishes[0]" />
+      <CatCarousel :items="items" />
       <PopularDishes />
       <v-toolbar color="transparent" class="pr-1 mt-n2">
         <v-toolbar-title class="text-white">Order Reports</v-toolbar-title>
@@ -91,19 +91,13 @@
         <v-col cols="12" sm="1" class="text-center"></v-col>
       </v-row>
     </v-col>
-    <v-col cols="12" md="4" sm="12">
+    <v-col cols="12" sm="12" lg="4">
       <Checkout class="sticky" style="top: 2px" />
     </v-col>
   </v-row>
 </template>
 
 <script setup>
-  import { useRouter } from 'vue-router'
-  import DishCard from '@/components/DishCard.vue'
-  import Checkout from '@/components/Checkout.vue'
-  import CatCarousel from '@/components/CatCarousel.vue'
-  import { useDishStore } from '@/stores/dish'
-  const router = useRouter()
   const dish = useDishStore()
   const dishes = dish.dishes
   const dataStore = useDataStore()

@@ -51,7 +51,7 @@ export default defineVuetifyConfiguration({
     VCardTitle: {
       style: 'white-space:normal',
     },
-    VRow: { style: 'margin:0 !important' },
+    VRow: { style: 'margin:0 auto !important' },
     VBtn: {
       // color: 'primary',
       variant: 'flat',

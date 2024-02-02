@@ -57,14 +57,14 @@
         justify="center"
         no-gutters
       >
-        <v-col md="4" class="sm:my-1">
+        <v-col :md="rail ? 12 : 4" class="sm:my-1">
           <v-btn
             icon="i-material-symbols-settings"
             size="small"
             color="#5F3B39"
           ></v-btn>
         </v-col>
-        <v-col md="4" class="sm:my-1">
+        <v-col :md="rail ? 12 : 4" class="sm:my-1">
           <v-badge dot color="#FF6259">
             <v-btn
               icon="i-material-symbols-notifications"

@@ -49,29 +49,33 @@
     </v-slide-group-item>
   </v-slide-group>
 
-  <v-expand-transition>
-    <v-card v-if="model != null" height="auto" class="mx-6 px-4">
-      <div class="d-flex fill-height align-center justify-center py-6">
-        <dish-card :dishe="dish" />
-        <h3 class="text-h6">Selected {{ model }}</h3>
-      </div>
-    </v-card>
-  </v-expand-transition>
+  <CatDataIterator :model-dishes="modelDishes" />
 </template>
 <script setup>
+  const props = defineProps({
+    items: { type: Array, default: () => [] },
+  })
   const dataStore = useDataStore()
+  const dishStore = useDishStore()
+  const model = ref(null)
+  const selectedName = computed(() => {
+    try {
+      return props.items[model.value].name
+    } catch (e) {
+      return ''
+    }
+  })
+  const modelDishes = computed(() =>
+    dishStore.dishes.filter(
+      (d) => d.categories && d.categories.includes(selectedName.value),
+    ),
+  )
 </script>
 <script>
   import CatAvatar from '@/components/CatAvatar.vue'
   import DishCard from './DishCard.vue'
-
   export default {
-    components: { CatAvatar, DishCard },
-    props: ['items', 'dish'],
-    data: () => ({
-      model: null,
-      isIntersecting: null,
-    }),
+    components: { DishCard, CatAvatar },
   }
 </script>
 <style>
@@ -83,5 +87,14 @@
       /* inner right cyan broad */ 0 0 10px #fff,
       /* outer white */ -2px 0 16px #f0f,
       /* outer left magenta */ 2px 0 16px #0ff; /* outer right cyan */
+  }
+  .list-enter-active,
+  .list-leave-active {
+    transition: all 0.5s ease;
+  }
+  .list-enter-from,
+  .list-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
   }
 </style>

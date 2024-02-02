@@ -33,6 +33,7 @@
     </v-card>
     <template v-for="(item, i) in cart.items" :key="i">
       <!-- {{ item }} -->
+
       <v-card
         class="ma-2 mt-n2"
         :title="item.name"
@@ -46,13 +47,13 @@
           </v-avatar>
         </template>
         <template #append>
-          <v-btn
+          <Quantity :dish="item" />
+          <!-- <v-btn
             density="compact"
             icon="mdi-circle-edit-outline"
             x-small
-          ></v-btn>
+          ></v-btn> -->
         </template>
-        <Quantity :dish="item" class="ml-14" />
       </v-card>
       <v-divider inset class="mt-n2"></v-divider>
     </template>
@@ -88,8 +89,6 @@
   </v-card>
 </template>
 <script setup>
-  import Quantity from '@/components/Quantity'
-  import { useCartStore } from '@/stores/cart'
   const cart = useCartStore()
 </script>
 <style scoped>

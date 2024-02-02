@@ -6,7 +6,11 @@
       class="mobile-nav"
     >
       <v-bottom-navigation v-model="value" color="#FF6259" mode="shift">
-        <v-btn v-for="(link, index) in links" :key="index">
+        <v-btn
+          v-for="(link, index) in links"
+          :key="index"
+          @click="navigateTo(link)"
+        >
           <v-icon>{{ link.icon }}</v-icon>
 
           <span>{{ link.text }}</span>
@@ -17,6 +21,10 @@
 </template>
 <script setup>
   import { links } from '@/assets/data/links'
+  const router = useRouter()
+  function navigateTo(link) {
+    router.push('/#' + link.text)
+  }
 </script>
 <script>
   export default {
