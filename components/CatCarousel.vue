@@ -123,11 +123,12 @@
   }
   .list-enter-active,
   .list-leave-active {
-    transition: all 0.5s ease;
+    transition: box-shadow 0.5s ease;
+    transition-delay: 3s;
   }
   .list-enter-from,
   .list-leave-to {
-    opacity: 0;
-    transform: translateX(30px);
+    /* opacity: 0;
+    transform: translateX(30px); */
   }
 </style>
