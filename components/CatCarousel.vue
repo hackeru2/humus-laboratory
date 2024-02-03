@@ -20,15 +20,11 @@
     <span class="text-red">2+ new </span> categories added this week
   </h6>
 
-  <v-slide-group v-model="model" selected-class="selected-class" show-arrows>
-    <v-slide-group-item
-      v-for="(item, n) in items"
-      :key="n"
-      v-slot="{ isSelected, toggle, selectedClass }"
-    >
+  <v-tabs v-model="model" selected-class="selected-class" show-arrows>
+    <v-tab v-for="(item, n) in items" :key="n">
       <v-card
         color="none"
-        :class="['ma-4', selectedClass]"
+        :class="['ma-4']"
         class="rounded"
         height="100"
         width="100"
@@ -46,8 +42,8 @@
           </v-scale-transition>
         </div>
       </v-card>
-    </v-slide-group-item>
-  </v-slide-group>
+    </v-tab>
+  </v-tabs>
   <v-card>
     <!-- <v-tabs v-model="model" color="deep-purple-accent-4" align-tabs="center">
       <v-tab :value="1">Landscape</v-tab>
@@ -57,7 +53,7 @@
     <v-window v-model="model">
       <v-window-item v-for="(category, n) in items" :key="n" :value="n">
         <v-container fluid>
-          <CatDataIterator :model-dishes="[]" :category="category" />
+          <CatDataIterator :category="category" />
         </v-container>
       </v-window-item>
     </v-window>
@@ -90,19 +86,6 @@
   ]
   const dataStore = useDataStore()
   const model = ref(null)
-  const dishStore = useDishStore()
-  const selectedName = computed(() => {
-    try {
-      return items[model.value].name
-    } catch (e) {
-      return ''
-    }
-  })
-  const modelDishes = computed(() =>
-    dishStore.dishes.filter((d) => {
-      return d.categories && d.categories.includes(selectedName.value)
-    }),
-  )
 </script>
 <script>
   import CatAvatar from '@/components/CatAvatar.vue'
