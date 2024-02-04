@@ -51,7 +51,7 @@
     </v-tabs> -->
     <v-window v-model="model">
       <v-window-item v-for="(category, n) in items" :key="n" :value="n">
-        <v-card fluid min-height="700px" :loading="n != model">
+        <v-card fluid min-height="700px">
           <!-- <CatDataIterator :category="category" /> -->
           <DishCard
             v-if="n == model"

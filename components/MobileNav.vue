@@ -52,7 +52,9 @@
       },
     },
     mounted() {
-      this.showMobile = true
+      this.$nextTick(() => {
+        this.showMobile = true
+      })
     },
   }
 </script>
