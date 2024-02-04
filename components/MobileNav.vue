@@ -1,8 +1,11 @@
 <template>
-  <v-expand-transition>
+  <v-lazy
+    :options="{ threshold: 0.5 }"
+    transition="fade-transition"
+    min-height="56"
+  >
     <v-layout
-      v-if="showMobile"
-      style="height: 56px; position: sticky; top: 0px"
+      style="height: 56px; position: sticky; width: 100%; top: 0px"
       class="mobile-nav"
     >
       <v-bottom-navigation v-model="value" color="#FF6259" mode="shift">
@@ -17,7 +20,7 @@
         </v-btn>
       </v-bottom-navigation>
     </v-layout>
-  </v-expand-transition>
+  </v-lazy>
 </template>
 <script setup>
   import { links } from '@/assets/data/links'
@@ -60,7 +63,7 @@
 </script>
 <style scoped>
   .mobile-nav {
-    animation: fadeIn 0.5s ease-in;
+    /* animation: fadeIn 0.5s ease-in; */
   }
   @keyframes fadeIn {
     from {
