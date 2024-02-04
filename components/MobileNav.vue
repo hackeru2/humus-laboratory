@@ -1,13 +1,9 @@
 <template>
   <v-lazy
     :options="{ threshold: 0.5 }"
-    transition="fade-transition"
-    min-height="56"
+    style="height: 56px; position: sticky; width: 100%; top: 0px"
   >
-    <v-layout
-      style="height: 56px; position: sticky; width: 100%; top: 0px"
-      class="mobile-nav"
-    >
+    <v-layout class="mobile-nav">
       <v-bottom-navigation v-model="value" color="#FF6259" mode="shift">
         <v-btn
           v-for="(link, index) in links"
@@ -63,7 +59,8 @@
 </script>
 <style scoped>
   .mobile-nav {
-    /* animation: fadeIn 0.5s ease-in; */
+    animation: fadeIn 0.5s ease-in;
+    height: inherit;
   }
   @keyframes fadeIn {
     from {
