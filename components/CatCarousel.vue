@@ -50,13 +50,14 @@
       <v-tab :value="2">City</v-tab>
       <v-tab :value="3">Abstract</v-tab>
     </v-tabs> -->
-    <!-- <v-window v-model="model">
+    <v-window v-model="model">
       <v-window-item v-for="(category, n) in items" :key="n" :value="n">
         <v-container fluid>
-          <CatDataIterator :category="category" />
+          <!-- <CatDataIterator :category="category" /> -->
+          <v-card>{{ category }}</v-card>
         </v-container>
       </v-window-item>
-    </v-window> -->
+    </v-window>
   </v-card>
   <!-- -->
 </template>
