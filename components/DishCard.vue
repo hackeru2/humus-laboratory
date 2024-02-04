@@ -1,6 +1,6 @@
 <template>
   <v-card
-    v-if="dish"
+    v-if="isEntering"
     v-intersect="intersectDish"
     color="transparent"
     class="dishcard mx-sm-1 my-10 sm:w-1/3 xs-w-9-12 xxs-w-9-12"
@@ -109,7 +109,7 @@
 
 <script setup>
   const selection = ref([])
-  const isEntering = ref(true)
+  const isEntering = ref(false)
   const additionals = ref([
     { name: 'Extra spice' },
     { name: 'Extra Zatar' },
@@ -148,13 +148,13 @@
   }
   onBeforeUnmount(() => {
     // This code will be executed just before the component is unmounted
-
-    console.log('UNmounted!!!???')
+    isEntering.value = false
+    console.log('UNmounted!!!???', isEntering)
     // Perform any cleanup or teardown operations here
   })
   onMounted(() => {
     // This code will be executed just before the component is unmounted
-
+    isEntering.value = true
     console.log('mounted!!!')
     // Perform any cleanup or teardown operations here
   })
