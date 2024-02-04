@@ -20,13 +20,7 @@
         <v-container class="pa-2" fluid>
           <v-row>
             <v-col v-for="item in items" :key="item._id" cols="auto" md="12">
-              <v-lazy
-                :min-height="200"
-                :options="{ threshold: 0.5 }"
-                transition="fade-transition"
-              >
-                <DishCard :dish="item.raw" :carousel="true" class="mx-auto" />
-              </v-lazy>
+              <DishCard :dish="item.raw" :carousel="true" class="mx-auto" />
             </v-col>
           </v-row>
         </v-container>
