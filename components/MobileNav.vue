@@ -1,5 +1,8 @@
 <template>
-  <v-layout style="height: 56px; position: sticky; top: 0px" class="mobile-nav">
+  <v-layout
+    style="height: 56px; position: fixed; z-index: 5000; width: 100%; top: 0px"
+    class="mobile-nav"
+  >
     <v-bottom-navigation v-model="value" color="#FF6259" mode="shift">
       <v-btn
         v-for="(link, index) in links"
