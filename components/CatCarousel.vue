@@ -20,11 +20,15 @@
     <span class="text-red">2+ new </span> categories added this week
   </h6>
 
-  <v-tabs v-model="model" selected-class="selected-class" show-arrows>
-    <v-tab v-for="(item, n) in items" :key="n">
+  <v-slide-group v-model="model" selected-class="selected-class2" show-arrows>
+    <v-slide-group-item
+      v-for="(item, n) in items"
+      :key="n"
+      v-slot="{ isSelected, toggle, selectedClass }"
+    >
       <v-card
         color="none"
-        :class="['ma-4']"
+        :class="['ma-4', selectedClass]"
         class="rounded"
         height="100"
         width="100"
@@ -42,8 +46,8 @@
           </v-scale-transition>
         </div>
       </v-card>
-    </v-tab>
-  </v-tabs>
+    </v-slide-group-item>
+  </v-slide-group>
   <v-card>
     <!-- <v-tabs v-model="model" color="deep-purple-accent-4" align-tabs="center">
       <v-tab :value="1">Landscape</v-tab>
