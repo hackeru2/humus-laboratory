@@ -62,42 +62,9 @@
           </v-card-text>
         </div>
         <v-divider class="mx-4 my-4" />
-        <v-card-text class="text-subtitle-1"
-          >🥗 • Additional Available</v-card-text
-        >
-
-        <div class="pb-2">
-          <v-chip-group
-            v-model="selection"
-            class="justify-center"
-            column
-            multiple
-          >
-            <v-chip
-              v-for="(additional, index) in additionals"
-              :key="index"
-              filter
-              selected-class="text-red"
-              >{{ additional.name }}</v-chip
-            >
-          </v-chip-group>
-        </div>
-
+        <DishAdditionals />
         <v-divider class="mx-4 my-4"></v-divider>
-        <v-row
-          :class="!carousel ? 'flex-column' : ' align-baseline'"
-          dense
-          class="justify-center w-1/2"
-        >
-          <Quantity :dish="dish" />
-
-          <v-card-subtitle :class="{ 'mr-2': carousel }"
-            >Price per dish
-          </v-card-subtitle>
-          <v-card-text class="d-contents text-subtitle-1"
-            >${{ dish.price }}.00</v-card-text
-          >
-        </v-row>
+        <PricePerDish :dish="dish" :carousel="carousel" />
         <v-divider class="my-4"></v-divider>
         <v-card-text class="text-subtitle-1">
           <b> ${{ totalPrice }}</b> Total Dish Price
@@ -108,14 +75,9 @@
 </template>
 
 <script setup>
-  const selection = ref([])
+  
   const isEntering = ref(false)
-  const additionals = ref([
-    { name: 'Extra spice' },
-    { name: 'Extra Zatar' },
-    { name: 'Onions' },
-    { name: 'Add Olive oil' },
-  ])
+
   const props = defineProps({
     carousel: { type: Boolean, required: false },
     dish: { type: Object, default: () => {} },
