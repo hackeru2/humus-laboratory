@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-data-iterator :items="myDishes" :search="search">
+    <v-data-iterator :items="dishStore.dishes" :search="search">
       <!-- <template #header>
         <v-toolbar class="px-2">
           <v-text-field
