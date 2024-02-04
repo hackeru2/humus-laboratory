@@ -24,7 +24,7 @@
     <v-slide-group-item
       v-for="(item, n) in items"
       :key="n"
-      v-slot="{ isSelected, toggle, selectedClass }"
+      v-slot="{ toggle, selectedClass }"
     >
       <v-card
         color="none"
@@ -35,16 +35,6 @@
         @click="toggle"
       >
         <cat-avatar :item="item" :active="0" />
-        <div class="d-flex fill-height align-center justify-center">
-          <v-scale-transition>
-            <v-icon
-              v-if="isSelected"
-              color="white"
-              size="48"
-              icon="mdi-close-circle-outline"
-            ></v-icon>
-          </v-scale-transition>
-        </div>
       </v-card>
     </v-slide-group-item>
   </v-slide-group>
