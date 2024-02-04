@@ -54,7 +54,7 @@
       <v-window-item v-for="(category, n) in items" :key="n" :value="n">
         <v-container fluid>
           <!-- <CatDataIterator :category="category" /> -->
-          <v-card>{{ category }}</v-card>
+          <DishCard :dish="dishStore.dishes" />
         </v-container>
       </v-window-item>
     </v-window>
@@ -86,6 +86,7 @@
     },
   ]
   const dataStore = useDataStore()
+  const dishStore = useDishStore()
   const model = ref(null)
 </script>
 <script>
