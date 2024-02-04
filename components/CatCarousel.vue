@@ -19,14 +19,13 @@
   <h6 class="text-white ml-4 mt-n4">
     <span class="text-red">2+ new </span> categories added this week
   </h6>
-  <v-tabs v-model="model" bg-color="primary" v>
-    <v-tab v-for="(item, n) in items" :key="n" :value="n">
-      {{ item.name }}</v-tab
-    >
-  </v-tabs>
-
   <v-card-text> </v-card-text>
-  <v-slide-group v-model="model" selected-class="selected-class2" show-arrows>
+  <v-slide-group
+    v-model="model"
+    mandatory
+    selected-class="selected-class2"
+    show-arrows
+  >
     <v-slide-group-item
       v-for="(item, n) in items"
       :key="n"
@@ -54,7 +53,7 @@
       <v-window-item v-for="(category, n) in items" :key="n" :value="n">
         <v-container fluid>
           <!-- <CatDataIterator :category="category" /> -->
-          <DishCard :dish="dishStore.dishes" />
+          <DishCard :dish="dishStore.dishes[0]" />
         </v-container>
       </v-window-item>
     </v-window>
