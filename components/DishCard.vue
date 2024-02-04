@@ -1,18 +1,20 @@
 <template>
   <v-card
     v-if="dish"
+    v-intersect="intersectDish"
     color="transparent"
     class="dishcard mx-sm-1 my-10 sm:w-1/3 xs-w-9-12 xxs-w-9-12"
+    :class="{ 'd-none': !isEntering }"
     elevation="0"
     max-width="90vw"
     :min-width="carousel ? '90%' : '330px'"
   >
-    <!-- <v-img
+    <v-img
       height="70"
       :lazy-src="props.dish.image"
       :src="props.dish.image"
       class="imag"
-    ></v-img> -->
+    ></v-img>
 
     <v-card color="#303030" elevation="5">
       <v-card-item class="text-center">
@@ -120,6 +122,7 @@
   })
   const cart = useCartStore()
   const expanded = ref(false)
+  const intersect = ref(false)
   const cartDish = computed(() => cart.items[props.dish._id])
   const totalPrice = computed(() => {
     try {
@@ -127,6 +130,33 @@
     } catch (e) {
       return 0
     }
+  })
+  function intersectDish(isIntersecting, entries, observer) {
+    // Navigating to the route with the obtained id
+    if (entries && entries[0] && !entries[0].visible) intersect.value = false
+    if (isIntersecting) {
+      // console.log('intersectDish', isIntersecting, entries, observer)
+      // console.log(isEntering.value)
+      // isEntering.value = true
+      // this.$router.push({ hash, scrollBehavior: () => false })
+      // console.log(router.currentRoute.hash)
+      //  setScrolledTo(targetId)
+      //   console.log(scrolledTo.value, targetId)
+    }
+    // More information about these options
+    // is located here: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+  }
+  onBeforeUnmount(() => {
+    // This code will be executed just before the component is unmounted
+
+    console.log('UNmounted!!!???')
+    // Perform any cleanup or teardown operations here
+  })
+  onMounted(() => {
+    // This code will be executed just before the component is unmounted
+
+    console.log('mounted!!!')
+    // Perform any cleanup or teardown operations here
   })
 </script>
 

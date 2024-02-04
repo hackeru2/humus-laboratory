@@ -51,10 +51,11 @@
     </v-tabs> -->
     <v-window v-model="model">
       <v-window-item v-for="(category, n) in items" :key="n" :value="n">
-        <v-container fluid>
+        <v-card fluid min-height="500px">
+          {{ (n, model) }}
           <!-- <CatDataIterator :category="category" /> -->
-          <DishCard :dish="dishStore.dishes[0]" />
-        </v-container>
+          <DishCard v-if="n == model" :dish="dishStore.dishes[0]" />
+        </v-card>
       </v-window-item>
     </v-window>
   </v-card>
