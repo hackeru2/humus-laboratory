@@ -1,5 +1,10 @@
 <template>
-  <v-img src="/paralax.png" class="custom-parallax" cover>
+  <v-img
+    lazy-src="/paralax.png"
+    src="/paralax.png"
+    class="custom-parallax"
+    cover
+  >
     <v-sheet
       height="900px"
       variant="transparent"
