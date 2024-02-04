@@ -1,22 +1,17 @@
 <template>
-  <v-lazy
-    :options="{ threshold: 0.5 }"
-    style="height: 56px; position: sticky; width: 100%; top: 0px"
-  >
-    <v-layout class="mobile-nav">
-      <v-bottom-navigation v-model="value" color="#FF6259" mode="shift">
-        <v-btn
-          v-for="(link, index) in links"
-          :key="index"
-          @click="navigateTo(link)"
-        >
-          <v-icon>{{ link.icon }}</v-icon>
+  <v-layout style="height: 56px; position: sticky; top: 0px" class="mobile-nav">
+    <v-bottom-navigation v-model="value" color="#FF6259" mode="shift">
+      <v-btn
+        v-for="(link, index) in links"
+        :key="index"
+        @click="navigateTo(link)"
+      >
+        <v-icon>{{ link.icon }}</v-icon>
 
-          <span>{{ link.text }}</span>
-        </v-btn>
-      </v-bottom-navigation>
-    </v-layout>
-  </v-lazy>
+        <span>{{ link.text }}</span>
+      </v-btn>
+    </v-bottom-navigation>
+  </v-layout>
 </template>
 <script setup>
   import { links } from '@/assets/data/links'
@@ -51,16 +46,13 @@
       },
     },
     mounted() {
-      this.$nextTick(() => {
-        this.showMobile = true
-      })
+      this.showMobile = true
     },
   }
 </script>
 <style scoped>
   .mobile-nav {
     animation: fadeIn 0.5s ease-in;
-    height: inherit;
   }
   @keyframes fadeIn {
     from {

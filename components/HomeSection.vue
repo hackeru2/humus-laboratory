@@ -2,6 +2,7 @@
   <v-img
     lazy-src="/paralax.png"
     src="/paralax.png"
+    style="margin-top: 56px"
     class="custom-parallax"
     cover
   >
