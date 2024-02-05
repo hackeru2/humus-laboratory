@@ -15,7 +15,7 @@
       <v-toolbar color="transparent" class="pr-1 mt-n2">
         <v-toolbar-title class="text-white">Order Reports</v-toolbar-title>
 
-        <v-spacer></v-spacer>
+        <v-spacer class="xs:hidden"></v-spacer>
         <span class="text-caption text-white">View all</span>
         <v-btn
           density="compact"

@@ -1,5 +1,10 @@
 <template>
-  <div v-if="dish" class="quantity">
+  <v-row
+    v-if="dish"
+    class="quantity flex-nowrap"
+    align="center"
+    justify="center"
+  >
     <v-btn
       v-ripple="{ class: `text-red` }"
       icon="i-material-symbols-add-circle-outline"
@@ -18,7 +23,7 @@
       @click="cart.removeItem(id)"
     >
     </v-btn>
-  </div>
+  </v-row>
 </template>
 
 <script setup>

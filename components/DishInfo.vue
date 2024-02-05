@@ -2,10 +2,10 @@
   <v-lazy
     :options="{ threshold: 0.5 }"
     transition="fade-transition"
-    min-height="200"
+    min-height="125"
   >
     <div>
-      <v-card-text v-if="dish.categories" class="text-subtitle-1">
+      <v-card-text v-if="dish.categories" class="dishcard-section-title">
         🍛 •
         <span v-for="cat in dish.categories" :key="cat" class="text-capitalize"
           >{{ cat }} <span v-if="cat != dish.categories.at(-1)">, </span>
@@ -32,6 +32,7 @@
 </template>
 
 <script setup>
+  const expanded = ref(false)
   const props = defineProps({
     carousel: { type: Boolean, required: false },
     dish: { type: Object, default: () => {} },

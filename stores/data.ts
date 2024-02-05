@@ -11,7 +11,7 @@ export const useDataStore = defineStore('data', () => {
   // const decrement = () => (scrolledTo.value = "-1")
   const setScrolledTo = (str) => {
     scrolledTo.value = str
-    console.log({ scrolledTo })
+    console.log({ scrolledToValue: scrolledTo.value })
   }
   return {
     scrolledTo,
@@ -24,10 +24,20 @@ export const useDataStore = defineStore('data', () => {
 
     // Navigating to the route with the obtained id
     if (isIntersecting) {
-      console.log(targetId, entries[0])
+      history.pushState({}, null, useRoute().path + '#' + targetId)
+      // console.log(entries[0].target.getBoundingClientRect().top)
+
       // this.$router.push({ hash, scrollBehavior: () => false })
       // console.log(router.currentRoute.hash)
+
+      // console.log((window.location.hash = '#' + targetId + ' '))
+      // const rect = entries[0].target.getBoundingClientRect()
+
+      // setTimeout(() => {
+      //   useRouter().replace({ hash: '#' + targetId })
+      // }, 1)
       setScrolledTo(targetId)
+
       console.log(scrolledTo.value, targetId)
     }
     // More information about these options

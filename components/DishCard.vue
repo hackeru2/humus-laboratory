@@ -39,10 +39,6 @@
         <DishAdditionals />
         <v-divider class="mx-4 my-4"></v-divider>
         <PricePerDish :dish="dish" :carousel="carousel" />
-        <v-divider class="my-4"></v-divider>
-        <v-card-text class="text-subtitle-1">
-          <b> ${{ totalPrice }}</b> Total Dish Price
-        </v-card-text>
       </v-card-item>
     </v-card>
   </v-card>
@@ -56,16 +52,10 @@
     dish: { type: Object, default: () => {} },
   })
   const cart = useCartStore()
-  const expanded = ref(false)
+
   const intersect = ref(false)
   const cartDish = computed(() => cart.items[props.dish._id])
-  const totalPrice = computed(() => {
-    try {
-      return Number(cartDish.value.quantity * cartDish.value.price)
-    } catch (e) {
-      return 0
-    }
-  })
+
   function intersectDish(isIntersecting, entries, observer) {
     // Navigating to the route with the obtained id
     if (entries && entries[0] && !entries[0].visible) intersect.value = false

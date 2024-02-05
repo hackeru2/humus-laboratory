@@ -7,7 +7,7 @@
   >
     <v-toolbar-title class="text-white">Categories</v-toolbar-title>
 
-    <v-spacer></v-spacer>
+    <v-spacer class="xs:hidden"></v-spacer>
     <span class="text-caption text-white">View More</span>
     <v-btn
       density="compact"
@@ -23,7 +23,8 @@
   <v-slide-group
     v-model="model"
     mandatory
-    selected-class="selected-class2"
+    class="mx--12"
+    selected-class="selected-class"
     show-arrows
   >
     <v-slide-group-item
@@ -51,14 +52,16 @@
     </v-tabs> -->
     <v-window v-model="model">
       <v-window-item v-for="(category, n) in items" :key="n" :value="n">
-        <v-card fluid min-height="700px">
-          <!-- <CatDataIterator :category="category" /> -->
-          <DishCard
-            v-if="n == model"
-            :dish="dishStore.dishes[0]"
-            :carousel="true"
-          />
-        </v-card>
+        <v-container align="center" class="p-0">
+          <v-card fluid min-height="700px">
+            <!-- <CatDataIterator :category="category" /> -->
+            <DishCard
+              v-if="n == model"
+              :dish="dishStore.dishes[0]"
+              :carousel="true"
+            />
+          </v-card>
+        </v-container>
       </v-window-item>
     </v-window>
   </v-card>
@@ -100,6 +103,10 @@
   }
 </script>
 <style>
+  .mx--12 {
+    margin-left: -12px;
+    margin-right: -12px;
+  }
   .selected-class {
     box-shadow: inset 0 0 10px #fff, /* inner white */ inset 4px 0 16px #f0f,
       /* inner left magenta short */ inset -4px 0 16px #0ff,

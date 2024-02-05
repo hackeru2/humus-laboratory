@@ -5,7 +5,7 @@
     transition="fade-transition"
   >
     <div>
-      <v-card-text class="text-subtitle-1"
+      <v-card-text class="text"
         >🥗 • Additional Available</v-card-text
       >
       <div class="pb-2">
