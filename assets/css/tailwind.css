@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer components {
+  xs:p-0 {
+    @apply xs:p-0;
+  }
   .xxs-w-9-12 {
     @apply xxs:w-9/12;
   }

@@ -2,11 +2,12 @@
 export default defineNuxtPlugin((nuxtApp) => {
   const router = useRouter()
 
-  // router.options.scrollBehavior = (to, from, savedPosition) => {
-  //   console.log({ toHASH: to.hash })
-  //   if (to.hash && to.hash === '#Home') {
-  //     return { el: to.hash, top: 200 }
-  //   }
-  //   return savedPosition || { top: 0 }
-  // }
+  router.options.scrollBehavior = (to, from, savedPosition) => {
+    // console.log({ toHASH: to.hash })
+    // if (to.hash && to.hash === '#Home') {
+    return { el: to.hash, behavior: 'smooth' }
+    // }
+
+    return savedPosition || { top: 0 }
+  }
 })

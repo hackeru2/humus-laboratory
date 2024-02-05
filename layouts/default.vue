@@ -1,6 +1,7 @@
 <template>
   <div>
     <!-- <div class="container mx-auto"> -->
+    <LoadSpinner v-if="showHideSpinner" />
 
     <v-app
       id="inspire"
@@ -21,6 +22,21 @@
     <!-- </div> -->
   </div>
 </template>
+<script>
+  export default {
+    data() {
+      return {
+        showHideSpinner: true,
+      }
+    },
+    beforeCreate() {
+      this.showHideSpinner = true
+    },
+    mounted() {
+      this.showHideSpinner = false
+    },
+  }
+</script>
 <style>
   /* .html {
     scroll-behavior: smooth;

@@ -71,6 +71,7 @@
     <OgImage :image="theOgImage" v-bind="ogImageOptions" />
     <NuxtLoadingIndicator />
     <NuxtLayout>
+      
       <NuxtPage />
     </NuxtLayout>
   </div>

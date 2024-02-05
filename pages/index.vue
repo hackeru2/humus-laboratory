@@ -91,7 +91,7 @@
         <v-col cols="12" sm="1" class="text-center"></v-col>
       </v-row>
     </v-col>
-    <v-col cols="12" sm="12" lg="4" class="pl-0">
+    <v-col cols="12" sm="12" lg="4" class="lg:pl-0">
       <Checkout class="sticky" style="top: 2px" />
     </v-col>
   </v-row>

@@ -101,7 +101,7 @@ export default defineNuxtConfig({
       },
 
       ssrClientHints: {
-        reloadOnFirstRequest: true,
+        // reloadOnFirstRequest: true,
         prefersColorScheme: true,
         prefersColorSchemeOptions: {
           useBrowserThemeOnly: false,
