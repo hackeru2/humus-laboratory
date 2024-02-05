@@ -23,7 +23,7 @@
     </v-card>
     <v-list class="top" mode="shift">
       <v-list-item
-        v-for="(item, i) in links"
+        v-for="(item, i) in authLinks"
         :key="i"
         :value="item"
         :to="'/#' + item.text"
@@ -92,6 +92,8 @@
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
   const setScrolledTo = (txt) => dataStore.setScrolledTo(txt)
+
+  const authLinks = computed(() => links.filter((l) => l.icon && !l.admin))
   onMounted(async () => {
     setTimeout(() => {
       drawer.value = true
