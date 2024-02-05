@@ -6,7 +6,7 @@ export const useDishStore = defineStore('dish', () => {
   const dishes = ref([
     {
       _id: '_3_a',
-      image: 'royal_humus_thina.png',
+      image: 'humus_dish.png',
       desc: 'Indulge in a savory journey with our Hatzil Thina Temptation. Immerse yourself in the rich flavors of roasted eggplants and creamy tahini for a culinary delight!',
       name: 'Hatzilicious Thina Fusion',
       categories: ['hatzils', 'thina'],
@@ -117,13 +117,24 @@ export const useDishStore = defineStore('dish', () => {
     },
     {
       _id: '_6_c',
-      image: 'soup2.png', // Assuming you have an image for soup named 'silver_soup.png'
+      image: 'soup4.png', // Assuming you have an image for soup named 'silver_soup.png'
       desc: 'Experience the perfect blend of Mediterranean flavors with our Soup Hatzil Harmony. Succulent grilled eggplants paired with smooth tahini – a taste sensation you won’t forget!',
       name: 'Mediterranean Soup Delight',
       categories: ['hatzils', 'soup'], // Adjusted the category to 'soup'
       money: '$18.00',
       price: 18,
       star: '4.5',
+      popular: false,
+    },
+    {
+      _id: '_6_d',
+      image: 'falafel_hatzils.png',
+      desc: "The dish described is a homemade falafel dish accompanied by purple vegetables, such as eggplant, purple cabbage, and potentially purple carrots. However, there's not a specific name for this particular combination beyond simply falafel with purple vegetables. Falafel is a traditional Middle Eastern food typically made from ground chickpeas or fava beans, mixed with herbs and spices, and then deep-fried into small patties or balls. The addition of purple vegetables adds a unique twist to the classic falafel dish, but it doesn't have a distinct name; it's a creative variation of serving falafel.",
+      name: 'Purple Paradise Falafel Delight',
+      categories: ['hatzils', 'falafel'], // Adjusted the category to 'soup'
+      money: '$15.00',
+      price: 15,
+      star: '3.5',
       popular: false,
     },
   ])
