@@ -25,10 +25,6 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue'
-  const overlay = ref(false)
-  const transparent = 'rgba(255, 255, 255, 0)'
-  const icons = ['mdi-rewind', 'mdi-play', 'mdi-fast-forward']
   const props = defineProps({
     item: Object,
     active: Number,

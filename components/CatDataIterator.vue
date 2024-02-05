@@ -20,12 +20,20 @@
         <v-container class="pa-2" fluid>
           <v-row>
             <v-col v-for="item in items" :key="item._id" cols="auto" md="12"> -->
-    <DishCard
+    <div
       v-for="dish in myDishes"
       :key="dish.name"
       :dish="dish"
       :carousel="true"
-    />
+    >
+      {{ dish }}
+    </div>
+    <!-- <DishCard
+      v-for="dish in myDishes"
+      :key="dish.name"
+      :dish="dish"
+      :carousel="true"
+    /> -->
     <!-- </v-col>
           </v-row>
         </v-container>
