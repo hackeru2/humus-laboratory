@@ -54,12 +54,12 @@
       <v-window-item v-for="(category, n) in items" :key="n" :value="n">
         <v-container align="center" class="p-0">
           <v-card fluid min-height="700px">
-            <!-- <CatDataIterator :category="category" /> -->
-            <DishCard
+            <CatDataIterator :category="category" />
+            <!-- <DishCard
               v-if="n == model"
               :dish="dishStore.dishes[0]"
               :carousel="true"
-            />
+            /> -->
           </v-card>
         </v-container>
       </v-window-item>
@@ -93,6 +93,7 @@
   ]
   const dataStore = useDataStore()
   const dishStore = useDishStore()
+
   const model = ref(null)
 </script>
 <script>

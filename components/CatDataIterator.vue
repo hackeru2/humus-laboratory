@@ -1,7 +1,7 @@
 <template>
-  <v-card>
-    <v-data-iterator :items="dishStore.dishes" :search="search">
-      <!-- <template #header>
+  <div>
+    <!-- <v-data-iterator :items="dishStore.dishes" :search="search"> -->
+    <!-- <template #header>
         <v-toolbar class="px-2">
           <v-text-field
             v-model="search"
@@ -15,18 +15,23 @@
           ></v-text-field>
         </v-toolbar>
       </template> -->
-
+    <!-- 
       <template #default="{ items }">
         <v-container class="pa-2" fluid>
           <v-row>
-            <v-col v-for="item in items" :key="item._id" cols="auto" md="12">
-              <DishCard :dish="item.raw" :carousel="true" class="mx-auto" />
-            </v-col>
+            <v-col v-for="item in items" :key="item._id" cols="auto" md="12"> -->
+    <DishCard
+      v-for="dish in myDishes"
+      :key="dish.name"
+      :dish="dish"
+      :carousel="true"
+    />
+    <!-- </v-col>
           </v-row>
         </v-container>
       </template>
-    </v-data-iterator>
-  </v-card>
+    </v-data-iterator> -->
+  </div>
 </template>
 <script setup>
   const props = defineProps({

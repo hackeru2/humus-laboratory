@@ -14,14 +14,6 @@
         scrim="#036358"
         class="align-center justify-center rounded"
       >
-        <v-btn variant="flat" @click="$emit('clicked')">{{ item.name }}</v-btn>
-      </v-overlay>
-      <v-overlay
-        :model-value="isHovering"
-        contained
-        scrim="#036358"
-        class="align-center justify-center rounded"
-      >
         <v-btn variant="flat">{{ item.name }}</v-btn>
       </v-overlay>
       <v-avatar size="100" rounded>
