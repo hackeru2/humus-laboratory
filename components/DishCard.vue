@@ -51,10 +51,7 @@
     carousel: { type: Boolean, required: false },
     dish: { type: Object, default: () => {} },
   })
-  const cart = useCartStore()
-
   const intersect = ref(false)
-  const cartDish = computed(() => cart.items[props.dish._id])
 
   function intersectDish(isIntersecting, entries, observer) {
     // Navigating to the route with the obtained id

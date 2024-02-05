@@ -26,7 +26,14 @@
       :dish="dish"
       :carousel="true"
     >
-      {{ dish }}
+      <v-img
+        height="70"
+        :lazy-src="dish.image"
+        :src="dish.image"
+        class="imag"
+      ></v-img>
+      <p>{{ dish.name }}</p>
+      <p>{{ dish.desc }}</p>
     </div>
     <!-- <DishCard
       v-for="dish in myDishes"
